@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logic", "Logic", "{61B07B33-6358-4CBC-AF69-BD225C89635D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ui", "Ui", "{816A2A0F-4F04-473F-92CF-935DDE7A0A6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".shared", ".shared", "{A89BC57C-1E23-460E-953B-4BB6FE7A1433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ui.Desktop", "Ui\Ui.Desktop\Ui.Desktop.csproj", "{06EEC5A9-7A4C-457F-ACEB-09546F091521}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Ui", "Logic\Logic.Ui\Logic.Ui.csproj", "{09DB0DFD-F3C5-4727-B157-C431D20A83CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{D64F211D-DF12-40BB-9E10-505110C10450}"
+	ProjectSection(SolutionItems) = preProject
+		Images\Add.png = Images\Add.png
+		Images\Edit.png = Images\Edit.png
+		Images\Logo.png = Images\Logo.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06EEC5A9-7A4C-457F-ACEB-09546F091521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06EEC5A9-7A4C-457F-ACEB-09546F091521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06EEC5A9-7A4C-457F-ACEB-09546F091521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06EEC5A9-7A4C-457F-ACEB-09546F091521}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09DB0DFD-F3C5-4727-B157-C431D20A83CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09DB0DFD-F3C5-4727-B157-C431D20A83CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09DB0DFD-F3C5-4727-B157-C431D20A83CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09DB0DFD-F3C5-4727-B157-C431D20A83CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06EEC5A9-7A4C-457F-ACEB-09546F091521} = {816A2A0F-4F04-473F-92CF-935DDE7A0A6E}
+		{09DB0DFD-F3C5-4727-B157-C431D20A83CE} = {61B07B33-6358-4CBC-AF69-BD225C89635D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {966DB8A0-DBE5-43CD-A1C1-8E56999BAE5E}
+	EndGlobalSection
+EndGlobal

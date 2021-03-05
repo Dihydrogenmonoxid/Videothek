@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="Videothek.Ui.Desktop.EditCustomer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Videothek.Ui.Desktop"
+             mc:Ignorable="d" 
+             Height="450" Width="310" 
+             DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Content="ID:" Grid.Row="0"/>
+        <Label Content="Nachname:" Grid.Row="1"/>
+        <Label Content="Vorname:" Grid.Row="2"/>
+        <Label Content="Straße:" Grid.Row="3"/>
+        <Label Content="Hausnummer:" Grid.Row="4"/>
+        <Label Content="PLZ:" Grid.Row="5"/>
+        <Label Content="Ort:" Grid.Row="6"/>
+<!--Das muss gelöscht werden-->
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding  MyCustomer.ID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding  MyCustomer.Name, Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding  MyCustomer.Vorname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding  MyCustomer.Strasse, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding  MyCustomer.Hausnummer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding  MyCustomer.PLZ, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding  MyCustomer.Ort, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button Content="Abbrechen" Grid.Row="7" Grid.Column="0"  Grid.ColumnSpan="2" HorizontalAlignment="Left" Style="{StaticResource Button}" Command="{Binding Abbrechen}"/>
+        <Button Content="Content" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource Button}" Command="{Binding EditOrAddCustomer}"/>
+    </Grid>
+</UserControl>

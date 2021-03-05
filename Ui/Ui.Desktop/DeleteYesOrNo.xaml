@@ -1,0 +1,26 @@
+﻿<Window x:Class="Videothek.Ui.Desktop.DeleteYesOrNo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Videothek.Ui.Desktop"
+        mc:Ignorable="d"
+        Title="DeleteYesOrNo" Height="250" Width="800" 
+        Background="#FFB97A57"
+              DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Wollen Sie diesen Datensatz wirklich löschen?" ToolTip="Are you sure you want to delete this record?"  HorizontalContentAlignment="Left" Margin="10"  />
+        <DataGrid Grid.Row="1" Margin="10" Grid.ColumnSpan="6" ItemsSource="{Binding SelectedDataToDelete, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="True" CanUserAddRows="False"/>
+        <Button Grid.Row="2" Content="Ja" Width="30" Height="25" HorizontalAlignment="Right" Margin="10" Command="{Binding Yes}"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="Nein" Width="30" Height="25" HorizontalAlignment="Left" Margin="10" Command="{Binding AnswerNoAndClosesWindow}"/>
+    </Grid>
+</Window>

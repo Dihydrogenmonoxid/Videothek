@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="Videothek.Ui.Desktop.HauptFenster"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Videothek.Ui.Desktop"
+             mc:Ignorable="d" 
+             Height="450" Width="800" Background="#FFB97A57"
+              DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="100"/>
+
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Menu Height="25" 
+              VerticalAlignment="Top" 
+              Grid.ColumnSpan="6" 
+              Background="#FFC3C3C3"  
+              BorderThickness="3" 
+              BorderBrush="#FF7F7F7F"  >
+            <MenuItem Header="Anzeigen" >
+                <MenuItem Header="Kunde" Command="{Binding OnTableSelect}" CommandParameter="Kunde"/>
+                <MenuItem Header="Artikel" Command="{Binding OnTableSelect}" CommandParameter="Artikel"/>
+                <MenuItem Header="Kategorien" Command="{Binding OnTableSelect}" CommandParameter="Kategorie"/>
+                <MenuItem Header="Ausgeliehene Artikel" Command="{Binding OnTableSelect}" CommandParameter="Art_Ausgeliehen"/>
+            </MenuItem>
+        </Menu>
+
+        
+
+        <StackPanel Grid.Row="1" Grid.Column="5" Orientation="Horizontal" Height="50"  HorizontalAlignment="Center" >
+            <TextBox  Style="{StaticResource SearchTxtb}" VerticalAlignment="Center" />
+            <Button  ToolTip="Add a new Item" Style="{StaticResource Button}" Width="25" VerticalAlignment="Center" Margin="0">
+                <TextBlock Text="&#x0001f50e;" MaxHeight="20" MaxWidth="20" FontSize="15" Background="#FFC3C3C3"/>
+            </Button>
+        </StackPanel>
+
+
+        <Button Grid.Row="1" Grid.Column="0" ToolTip="Add a new Item" Style="{StaticResource ButtonStart}" Command="{Binding HinzufügenKlick}" >
+            <StackPanel Orientation="Vertical">
+                <Image Source="Add.png" MaxHeight="20" MinHeight="20"/>
+                <TextBlock  Text="Hinzufügen"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="1" ToolTip="Edit a new Item" Style="{StaticResource ButtonStart}" Command="{Binding BearbeitenKlick}">
+            <StackPanel Orientation="Vertical">
+                <Image Source="Edit.png" MaxHeight="20" MinHeight="20"/>
+                <TextBlock  Text="Bearbeiten"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="2" ToolTip="Delete a new Item" Style="{StaticResource ButtonStart}" Command="{Binding Delete}" >
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="&#x1F5D1;" MaxHeight="20" MaxWidth="20" FontSize="15"/>
+                <TextBlock  Text="Löschen"/>
+            </StackPanel>
+        </Button>
+
+
+
+        <DataGrid Grid.Row="3" Margin="10" Grid.ColumnSpan="6" ItemsSource="{Binding SelectedData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  SelectedItem="{Binding SelectedGridColumn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="True" CanUserAddRows="False"/>
+    </Grid>
+</UserControl>
